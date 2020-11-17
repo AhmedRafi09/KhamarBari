@@ -92,6 +92,10 @@ class ProductApiController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $product = Product::findorfail($id);
+        $product->update($request->all());
+
+        return response('Product Updated!');
     }
 
     /**

@@ -89,6 +89,10 @@ class UserApiController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = User::findorfail($id);
+        $user->update($request->all());
+
+        retun response('User Updated!');
     }
 
     /**
